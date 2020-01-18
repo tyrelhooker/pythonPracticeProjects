@@ -18,6 +18,32 @@ def buildBoard():
         theBoard.setdefault(slot, ' ')
     print(theBoard)
 
+def printBoard(board):
+    buildBoard()
+    # boardSlots = buildSlots()
+    # for slot in range(int(boardSlots[0]), int(boardSlots[3])):
+    #     print(f'{board[]}')
+    # theBoard['low-R'] = 'X'
+    print(f"{board['top-L']}|{board['top-M']}|{board['top-R']}")
+    print('-+-+-')
+    print(f"{board['mid-L']}|{board['mid-M']}|{board['mid-R']}")
+    print('-+-+-')
+    print(f"{board['low-L']}|{board['low-M']}|{board['low-R']}")
 # print(boardSlots)
-buildBoard()
-#
+# buildBoard()
+
+def guessX():
+    location = input('Enter a location to place an X: ')
+    theBoard[location] = 'X'
+
+def guessY():
+    location = input('Enter a location to place an O: ')
+    theBoard[location] = 'O'
+
+def playGame():
+    guessX()
+    printBoard(theBoard)
+    guessY()
+    printBoard(theBoard)
+
+playGame()
