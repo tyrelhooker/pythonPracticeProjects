@@ -32,18 +32,52 @@ def printBoard(board):
 # print(boardSlots)
 # buildBoard()
 
-def guessX():
-    location = input('Enter a location to place an X: ')
-    theBoard[location] = 'X'
+# def guessX(location):
+#     theBoard[location] = 'X'
+#     # printBoard(theBoard)
+#     xTurn = theBoard[location]
+#     printBoard(theBoard)
+#     return xTurn
+#
+# def guessO(location):
+#     theBoard[location] = 'O'
+#     # printBoard(theBoard)
+#     oTurn = theBoard[location]
+#     printBoard(theBoard)
+#     return oTurn
 
-def guessY():
-    location = input('Enter a location to place an O: ')
-    theBoard[location] = 'O'
+def guesses(turn, location):
+    theBoard[location] = turn
+    # printBoard(theBoard)
+    oTurn = theBoard[location]
+    printBoard(theBoard)
+    return oTurn
 
 def playGame():
-    guessX()
-    printBoard(theBoard)
-    guessY()
-    printBoard(theBoard)
+    # printBoard(theBoard)
+    turn = 'X'
+    guess = ''
+    # print(turn == guessX())
+    for i in range(9):
+        print(i)
+        if turn == 'X':
+            turn = 'O'
+            guess = input(f'Enter a location to place an {turn}: ')
+            guesses(turn, guess)
+            # print(f'If turn2: {turn}')
+        else:
+            turn = 'X'
+            guess = input(f'Enter a location to place an {turn}: ')
+            guesses(turn, guess)
+            # print(f'Else turn: {turn}')
+    # for i in range(9):
+    #     printBoard(theBoard)
+    #     if turn == guessX():
+    #         printBoard(theBoard)
+    #         turn = guessO()
+    #     else:
+    #         printBoard(theBoard)
+    #         turn = guessX()
+    # printBoard(theBoard)
 
 playGame()
