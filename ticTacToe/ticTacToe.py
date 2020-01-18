@@ -9,7 +9,6 @@ def buildSlots():
     for vert in verticalIndicators:
         for horiz in horizontalIndicators:
             boardSlots.append(f'{vert}-{horiz}')
-
     return boardSlots
 
 def buildBoard():
@@ -46,12 +45,24 @@ def printBoard(board):
 #     printBoard(theBoard)
 #     return oTurn
 
+
 def guesses(turn, location):
     theBoard[location] = turn
     # printBoard(theBoard)
     oTurn = theBoard[location]
     printBoard(theBoard)
     return oTurn
+
+
+def checkGameStatus():
+    # TODO implement this function to check if someone has won
+    pass
+
+
+def checkUserInput():
+    # TODO create logic to check user input, ie to lowercase search of dictionary
+    pass
+
 
 def playGame():
     # printBoard(theBoard)
