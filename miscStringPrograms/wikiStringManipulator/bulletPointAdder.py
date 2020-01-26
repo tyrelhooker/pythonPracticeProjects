@@ -6,20 +6,33 @@
 
 import pyperclip
 
-unformattedText = pyperclip.paste()
+def pasteFromClipboard():
+    unformattedText = pyperclip.paste()
+    return unformattedText
 
-# print(type(unformattedText))
-listOfText = unformattedText.split()
-# print(listOfText)
+def separateStrings():
+    unformattedText = pasteFromClipboard()
+    # print(type(unformattedText))
+    listOfText = unformattedText.split()
+    # print(listOfText)
+    return listOfText
 
-formattedText = []
+def formatStrings():
+    listOfText = separateStrings()
+    formattedList = []
 
-for item in listOfText:
-    formattedText.append('* ' + item + ('\n'))
+    for item in listOfText:
+        formattedList.append('* ' + item + ('\n'))
 
-stringifiedText = ''.join(formattedText)
+    formattedString = ''.join(formattedList)
 
-pyperclip.copy(stringifiedText)
+    return formattedString
 
-print(stringifiedText)
 
+def copyToClipboard():
+    formattedString = formatStrings()
+    pyperclip.copy(formattedString)
+
+    print(formattedString)
+
+copyToClipboard()
