@@ -1,4 +1,4 @@
-#! python3
+#! /usr/bin/env python3.7
 # phoneAndEmailExtract.py - Finds phone numbers and emails from content
 # copied to clipboard
 
