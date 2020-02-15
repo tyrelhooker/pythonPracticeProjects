@@ -1,4 +1,4 @@
-states = {
+{
     "AL": {
         "name": "Alabama",
         "capital": "Montgomery",
@@ -300,3 +300,5 @@ states = {
         "long": "-104.802042"
     }
 }
+
+
