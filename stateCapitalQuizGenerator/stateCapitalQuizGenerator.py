@@ -6,10 +6,14 @@ import statedata
 import pkgutil
 import sys
 
-print(statedata.us_states)
-search_path = ['.']
-all_modules = [x[1] for x in pkgutil.iter_modules(path=search_path)]
-print(all_modules)
+all_states_info = statedata.us_states
+state_and_capital = {}
+# print(all_states_info)
 
-
-print(sys.path)
+allVals = all_states_info.values()
+# print(allVals)
+for i in allVals:
+    state_and_capital[i['name']] = i['capital']
+print(state_and_capital)
+# for i in range(len(allVals)):
+#     print(allVals['name'], allVals['capital'])
