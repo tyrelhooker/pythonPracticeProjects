@@ -6,12 +6,26 @@
 
 import sys
 import pyperclip
+import shelve
+
+cbKeyword = sys.argv[1].lower()
+
+if cbKeyword == 'save':
+    advancedClipboardData = shelve.open('myData')
+    advancedClipboardData[sys.argv[2]] = pyperclip.paste()
+    advancedClipboardData.close()
+elif cbKeyword == 'list':
+    advancedClipboardData = shelve.open('myData')
+    print(list(advancedClipboardData))
+    advancedClipboardData.close()
+else:
+
 
 # TODO: Create check of command line items for sys.argv
 # TODO: Create control for sys.argv[1] list that shows all names in shelve
 # TODO: Create control for sys.argv[2] that saves argv[3] as key name
 # TODO: Paste clipboard content to argv[2]'s value
-clipboardContent = {}
-if sys.argv[1] == 'save':
-    clipboardContent[sys.argv[2]] = pyperclip.paste()
-    print(clipboardContent)
+# clipboardContent = {}
+# if sys.argv[1] == 'save':
+#     clipboardContent[sys.argv[2]] = pyperclip.paste()
+#     print(clipboardContent)
